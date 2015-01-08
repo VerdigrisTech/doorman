@@ -92,7 +92,11 @@ function loginPage(req, res, next) {
   }
 
   req.session.redirectTo = req.originalUrl;
-  res.render('login.jade', { pageTitle: 'Login', providers: everyauth.enabled });
+  res.render('login.jade', {
+    pageTitle: 'Login',
+    providers: everyauth.enabled,
+    targetName: conf.targetName || 'this page'
+  });
 }
 
 // Store the middleware since we use it in the websocket proxy
