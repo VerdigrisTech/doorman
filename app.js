@@ -93,7 +93,7 @@ function loginPage(req, res, next) {
 
   req.session.redirectTo = req.originalUrl;
   res.render('login.jade', {
-    pageTitle: 'Login',
+    pageTitle: conf.targetName || 'Verdigris',
     providers: everyauth.enabled,
     targetName: conf.targetName || 'this page'
   });
